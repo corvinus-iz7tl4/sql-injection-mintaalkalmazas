@@ -30,14 +30,14 @@ header("Content-type: text/html; charset=utf-8");
         <h3>KERESÉS</h3>
         <form action="gyogyszerek.php" method="get">
             <input type="text" name="search" id="search">
-            <input type="button" value="Keresés" name="searc_btn">
+            <input type="submit" value="Keresés">
         </form>
         <?php
         require_once("connect.php");
         if (isset($_GET["search"])) {
             $gyogyszer = $_GET["search"];
 
-            $query = "SELECT * FROM gyogyszer WHERE nev LIKE '%$gyogyszer'";
+            $query = "SELECT * FROM gyogyszer WHERE nev LIKE '%$gyogyszer%'";
             $result = mysqli_query($kapcsolat, $query);
 
             if (mysqli_num_rows($result) > 0) {

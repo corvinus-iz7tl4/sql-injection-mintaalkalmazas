@@ -12,13 +12,13 @@ header("Content-type: text/html; charset=utf-8");
 
 <body>
     <div>
-        <form method="post" action="checkLogin.php" onSubmit="return blankcheck()">
+        <form method="post" action="checkLogin.php" onSubmit="return blankcheck()" name="submit">
             <h2>Bejelentkezés</h2>
             <label for="emailc">E-mail cím*</label><br>
             <input type="text" name="email" id="emailc" size="35"><br>
             <label for="pw">Jelszó*</label><br>
             <input type="password" name="password" id="pw" size="35"><br>
-            <input type="submit" value="Bejelentkezés">
+            <input type="submit" value="Bejelentkezés" name="submit">
         </form>
         <div id="errorMsg">
             <?php

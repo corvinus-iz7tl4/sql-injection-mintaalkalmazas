@@ -1,24 +1,168 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #a1c7d3;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #EAFDFC;
+    font-family: sans-serif;
 }
 
-a {
-    color: black;
+/* Main container */
+.container {
+    display: flex;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #82AAE3;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 5%;
+}
+
+.profile {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+span {
+    font-size: 16px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    padding: 20px;
+    background-color: #EAFDFC;
+}
+
+.dashboard h3 {
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+
+/* Menu */
+.menu {
+    width: 15%;
+    background-color: #91D8E4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-right: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.menu li img {
+    align-self: left;
+}
+
+.menu li a {
     text-decoration: none;
+    color: black;
+    margin-left: 5px;
 }
 
-a#active {
-    color: green;
+.menu li.active {
+    font-weight: bold;
+    border: solid #BFEAF5 1px;
+    background-color: #BFEAF5;
+    ;
+}
+
+.menu li:hover {
+    background-color: #EAFDFC;
+    cursor: pointer;
+}
+
+.box {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    background-color: #BFEAF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.box th,
+.box td {
+    border: 1px solid #ddd;
+    padding: 2px;
+    text-align: left;
+}
+
+.box th {
+    background-color: #f0f0f0;
     font-weight: bold;
 }
 
+.box1 {
+    height: 55%;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+
+    /* For tablet and mobile */
+    .container {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+}
+
+/* ---LOGIN STYLE--- */
 .login-container {
     display: flex;
     justify-content: center;
@@ -29,7 +173,7 @@ a#active {
 .login-form {
     width: 50%;
     height: 50%;
-    background-color: #a1e1e6;
+    background-color: #BFEAF5;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -41,7 +185,7 @@ a#active {
 
 .login-form h2 {
     font-size: 36px;
-    margin-top: 5px;
+    margin-top: 25px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -69,13 +213,13 @@ a#active {
     margin-right: 20px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .login-form input[type="submit"] {
     width: 40%;
     padding: 10px;
-    background-color: #1e81b0;
+    background-color: #91D8E4;
     border: none;
     color: #ffffff;
     font-size: 16px;
@@ -86,76 +230,11 @@ a#active {
 }
 
 .login-form input[type="submit"]:hover {
-    background-color: #063970;
+    background-color: #82AAE3;
 }
 
 .login-form #errorMsg {
     color: red;
     margin-top: 25px;
     font-style: italic;
-}
-
-/* Navigation bar styles */
-.navbar {
-    background-color: #333;
-    overflow: hidden;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.navbar li {
-    float: left;
-}
-
-.navbar li a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.navbar li a:hover {
-    background-color: #555;
-}
-
-.navbar .active {
-    background-color: #4CAF50;
-}
-
-/* Responsive navigation bar */
-@media screen and (max-width: 600px) {
-    .navbar li {
-        float: none;
-    }
-
-    .navbar li a {
-        display: block;
-        text-align: left;
-    }
-}
-
-/* Logout and main menu buttons */
-.logout-btn,
-.dashboard-btn {
-    display: inline-block;
-    background-color: #f44336;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.logout-btn:hover,
-.dashboard-btn:hover {
-    background-color: #df362d;
 }

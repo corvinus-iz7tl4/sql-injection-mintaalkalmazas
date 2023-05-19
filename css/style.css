@@ -145,6 +145,70 @@ span {
     height: 55%;
 }
 
+.box-szoveg{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    background-color: #BFEAF5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.box-gyogyszer {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-color: #BFEAF5;
+}
+
+.box-gyogyszer h4 {
+    padding: 5px;
+    margin: 5px;
+    font-style: oblique;
+}
+
+.box-gyogyszer input[type="text"] {
+    width: 55%;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.box-gyogyszer input[type="submit"] {
+    padding: 4px;
+    margin: 6px;
+    background-color: #91D8E4;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.box-gyogyszer input[type="submit"]:hover {
+    background-color: #82AAE3;
+    color: black;
+}
+
+.box2 {
+    height: 70%;
+}
+
+.box2 table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.box th,
+.box td {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
 
@@ -174,7 +238,7 @@ span {
     width: 50%;
     height: 50%;
     background-color: #BFEAF5;
-    padding: 15px;
+    padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -185,7 +249,7 @@ span {
 
 .login-form h2 {
     font-size: 36px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -199,7 +263,7 @@ span {
     align-self: flex-start;
 }
 
-.login-form input[type="text"],
+.login-form input[type="email"],
 .login-form input[type="password"] {
     width: 85%;
     height: 40px;

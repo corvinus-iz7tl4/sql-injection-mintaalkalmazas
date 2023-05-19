@@ -61,25 +61,24 @@ header("Content-type: text/html; charset=utf-8");
                     $gyogyszerResult = mysqli_fetch_assoc($result);
 
                     if (mysqli_num_rows($result) > 0) {
-                        for ($i=0; $i < mysqli_num_rows($result); $i++) { 
-                            print "<table>";
-                            print "<tr><th colspan='2'> GYÓGYSZER ADATAI </th></tr>";
+                        print "<table>";
+                        print "<tr><th colspan='2'> GYÓGYSZER ADATAI </th></tr>";
+                        while ($gyogyszerResult = mysqli_fetch_array($result)) {
                             print "<tr><td>Név:</td><td>";
                             echo $gyogyszerResult['nev'];
                             print "</td></tr><tr><td>Adagolás:</td><td>";
                             echo $gyogyszerResult['adagolas'];
                             print "</td></tr><tr><td>Vény köteles?</td><td>";
-                            if ($gyogyszerResult['venykotelezett-e']===0) {
+                            if ($gyogyszerResult['venykotelezett-e'] === 0) {
                                 print "nem vényköteles";
-                            }
-                            else{
+                            } else {
                                 print "vényköteles";
                             }
                             print "</td></tr><tr><td>Betegség:</td><td>";
                             echo $gyogyszerResult['betegseg'];
-                            print "</td></tr></table>";
-                            $i++;
+                            print "</td></tr><hr>";
                         }
+                        print "</table>";
                     } else {
                         echo "nincs találat";
                     }

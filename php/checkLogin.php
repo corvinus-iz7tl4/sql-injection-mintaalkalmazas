@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
         $_SESSION['paciens_tajSzam'] = $paciens["tajSzam"];
 
         $orvosID = $paciens['orvosID'];
-        $queryOrvos = "SELECT * FROM orvos WHERE id=orvosID";
+        $queryOrvos = "SELECT * FROM orvos WHERE id='$orvosID'";
         $resultOrvos = mysqli_query($kapcsolat, $queryOrvos);
         $orvos = mysqli_fetch_assoc($resultOrvos);
 
@@ -43,7 +43,7 @@ if (isset($_POST["submit"])) {
         }
 
         $gyogyszerID = $paciens['gyogyszerID'];
-        $queryGyogyszer = "SELECT * FROM gyogyszer WHERE id=gyogyszerID";
+        $queryGyogyszer = "SELECT * FROM gyogyszer WHERE id='$gyogyszerID'";
         $resultGyogyszer = mysqli_query($kapcsolat, $queryGyogyszer);
         $gyogyszer = mysqli_fetch_assoc($resultGyogyszer);
 
@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
         }
 
         $vizsgalatID = $paciens['vizsgalatID'];
-        $queryVizsgalat = "SELECT * FROM vizsgalatok WHERE id=vizsgalatID";
+        $queryVizsgalat = "SELECT * FROM vizsgalatok WHERE id='$vizsgalatID'";
         $resultVizsgalat = mysqli_query($kapcsolat, $queryVizsgalat);
         $vizsgalatok = mysqli_fetch_assoc($resultVizsgalat);
 
